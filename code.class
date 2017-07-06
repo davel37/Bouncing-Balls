@@ -1,6 +1,7 @@
-mport java.applet.*;
+import java.awt.*;
+import java.awt.color.*;
+import java.applet.*;
 import java.util.Random;
-
 
 public class BounceTwo  extends Applet implements Runnable{
 	Thread T = null;
@@ -10,11 +11,8 @@ public class BounceTwo  extends Applet implements Runnable{
 	private Color ballColor[];
 	private Ball balls[];
 	private int width, height, NumBalls;
-
 	//private Graphics graphic;  //For double buffering
 	//private Image img;
-	
-	
 	public void init(){
 		this.width = getSize().width;
 		this.height = getSize().height;
@@ -39,14 +37,12 @@ public class BounceTwo  extends Applet implements Runnable{
 	}
         	  public void start() {
         		  
-        	
         			if (T == null) {
         				T = new Thread(this);
         				T.start();
         			}
         		}
-        	 
-		public void run (){
+         public void run (){
 			while(true){
 		//Loop through the number of balls and call the moveball method.		
 				for ( int i= 0;i < NumBalls;i++){
